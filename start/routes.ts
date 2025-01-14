@@ -9,8 +9,12 @@
 
 import router from '@adonisjs/core/services/router'
 
+const ApiController = () => import('#controllers/api_controller')
+
 router.get('/', async () => {
   return {
     hello: 'world',
   }
 })
+
+router.get('product/:id', [ApiController, 'getProduct'])
