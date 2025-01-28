@@ -14,6 +14,7 @@ const AuthController = () => import('#controllers/auth_controller')
 
 router.group(() => {
   router.get('product/:id', [ApiController, 'getProduct'])
+  router.get('check', [ApiController, 'isUp'])
 }).prefix('api')
 
 router.group(() => {

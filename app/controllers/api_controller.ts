@@ -9,4 +9,8 @@ export default class ApiController {
   async getProduct( { params }: HttpContext ) {
     return this.service.getProduct(params.id)
   }
+
+  async isUp() {
+    return true
+  }
 }
