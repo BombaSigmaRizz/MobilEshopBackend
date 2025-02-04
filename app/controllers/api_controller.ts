@@ -6,7 +6,7 @@ import Product from '#models/product'
 @inject()
 export default class ApiController {
 
-  async getProduct( { auth, params }: HttpContext ) {
+  async getProduct( { params }: HttpContext ) {
     return Product.query().where('id', params.id).first()
   }
 
