@@ -15,7 +15,7 @@ export default class extends BaseSchema {
       
       table.integer('rating')
       
-      table.string('images').notNullable()
+      table.specificType('images', 'varchar[]').notNullable().defaultTo('{}')
 
       table.timestamp('created_at')
       table.timestamp('updated_at')

@@ -1,18 +1,20 @@
 import type { HttpContext } from '@adonisjs/core/http'
 import { inject } from '@adonisjs/core'
-import Product from '#models/product'
+import { ApiService } from '#services/api_service'
+import { addProductValidator } from '#validators/api'
 
 
 @inject()
 export default class ApiController {
+  constructor(private apiService: ApiService) {}
 
   async getProduct( { params }: HttpContext ) {
-    return Product.query().where('id', params.id).first()
+    return this.apiService.getProduct(params.id)
   }
 
-  async addProduct( { request }: HttpContext ) {
-    // const payload = request.only()
-    // return Product.create(payload)
+  async addProduct( { auth, request }: HttpContext ) {
+    const payload = await request.validateUsing(addProductValidator)
+    return await this.apiService.addProduct(payload)
   }
 
   async isUp() {
