@@ -18,7 +18,7 @@ export default class Product extends BaseModel {
   declare rating: number
 
   @column()
-  declare images: string
+  declare images: string[]
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime

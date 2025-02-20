@@ -7,7 +7,7 @@ export type RegisterProps = Infer<typeof registerValidator>
 export const loginValidator = vine.compile(
   vine.object({
     email: vine.string().email(),
-    password: vine.string().minLength(8),
+    password: vine.string(),
   })
 )
 
