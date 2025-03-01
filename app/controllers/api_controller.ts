@@ -14,6 +14,7 @@ export default class ApiController {
 
   async addProduct( { auth, request }: HttpContext ) {
     const payload = await request.validateUsing(addProductValidator)
+
     return await this.apiService.addProduct(payload)
   }
 

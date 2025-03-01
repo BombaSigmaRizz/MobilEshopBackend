@@ -6,12 +6,11 @@ export type AddProductValidatorProps = Infer<typeof addProductValidator>
 
 export const addProductValidator = vine.compile(
   vine.object({
-    id: vine.number(),
     name: vine.string(),
     price: vine.number(),
     description: vine.string(),
-    rating: vine.number(),
-    images: vine.array(vine.string()),
+    showcaseImage: vine.file(),
+    catalogImages: vine.array(vine.file()),
     brand: vine.enum(EBrandTags),
     storage: vine.enum(EStorageTags),
     color: vine.enum(EColorTags)

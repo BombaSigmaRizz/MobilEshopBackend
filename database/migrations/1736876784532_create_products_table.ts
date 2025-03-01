@@ -13,9 +13,17 @@ export default class extends BaseSchema {
       
       table.string('description').notNullable()
       
-      table.integer('rating')
+      table.integer('rating').nullable()
+
+      table.string('showcase_image').notNullable()
       
-      table.specificType('images', 'varchar[]').notNullable().defaultTo('{}')
+      table.specificType('catalog_images', 'varchar[]').notNullable().defaultTo('{}')
+
+      table.string('brand').notNullable()
+
+      table.string('storage').notNullable()
+
+      table.string('color').notNullable()
 
       table.timestamp('created_at')
       table.timestamp('updated_at')

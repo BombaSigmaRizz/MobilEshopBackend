@@ -18,7 +18,19 @@ export default class Product extends BaseModel {
   declare rating: number
 
   @column()
-  declare images: string[]
+  declare showcaseImage: string
+
+  @column()
+  declare catalogImages: string[]
+
+  @column()
+  declare brand: string
+
+  @column()
+  declare storage: string
+
+  @column()
+  declare color: string
 
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
