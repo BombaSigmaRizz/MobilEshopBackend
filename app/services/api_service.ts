@@ -8,6 +8,10 @@ export class ApiService {
     return Product.query().where('id', id).firstOrFail()
   }
 
+  async getProducts() {
+    return Product.query()
+  }
+
   async addProduct(payload: AddProductValidatorProps) {
     await payload.showcaseImage.move(app.makePath('storage/uploads'), {
       name: `${cuid()}.${payload.showcaseImage.extname}`
