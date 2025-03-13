@@ -14,11 +14,11 @@ const ApiController = () => import('#controllers/api_controller')
 const AuthController = () => import('#controllers/auth_controller')
 
 router.group(() => {
-  router.get('products/:id', [ApiController, 'getProduct']).use(middleware.auth())
+  router.get('products/:id', [ApiController, 'getProduct'])
   router.get('check', [ApiController, 'isUp'])
   router.post('products', [ApiController, 'addProduct']).use(middleware.auth())
-  router.get('products', [ApiController, 'getProducts']).use(middleware.auth())
-  router.get('uploads/*', [ApiController, 'getUpload']).use(middleware.auth())
+  router.get('products', [ApiController, 'getProducts'])
+  router.get('uploads/*', [ApiController, 'getUpload'])
 })
 
 router.group(() => {
