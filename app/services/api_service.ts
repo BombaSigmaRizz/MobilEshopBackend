@@ -5,11 +5,16 @@ import app from "@adonisjs/core/services/app"
 
 export class ApiService {
   async getProduct(id: number) {
-    return Product.query().where('id', id).firstOrFail()
+    return await Product.query().where('id', id).firstOrFail()
   }
 
   async getProducts() {
     return Product.query()
+  }
+
+  async getProductReviews(params: any) {
+    const product = await Product.query().where('id', params.id).preload('reviews').firstOrFail()
+    return product.reviews
   }
 
   async addProduct(payload: AddProductValidatorProps) {

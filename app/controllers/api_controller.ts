@@ -18,6 +18,10 @@ export default class ApiController {
     return this.apiService.getProducts()
   }
 
+  async getProductReviews( { params }: HttpContext ) {
+    return this.apiService.getProductReviews(params)
+  }
+
   async addProduct( { request }: HttpContext ) {
     const payload = await request.validateUsing(addProductValidator)
 
