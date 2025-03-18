@@ -13,8 +13,6 @@ export default class extends BaseSchema {
       
       table.string('description').notNullable()
       
-      table.integer('rating').nullable()
-
       table.string('showcase_image').notNullable()
       
       table.specificType('catalog_images', 'varchar[]').notNullable().defaultTo('{}')

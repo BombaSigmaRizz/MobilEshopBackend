@@ -17,9 +17,6 @@ export default class Product extends BaseModel {
   declare description: string
 
   @column()
-  declare rating: number
-
-  @column()
   declare showcaseImage: string
 
   @column()
