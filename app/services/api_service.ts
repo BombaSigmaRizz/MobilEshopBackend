@@ -17,6 +17,15 @@ export class ApiService {
     return product.reviews
   }
 
+  async addProductReview(payload: any) {
+    const product = await Product.query().where('id', payload.productId).firstOrFail()
+    return product.related('reviews').create({
+      name: payload.name,
+      content: payload.content,
+      rating: payload.rating
+    })
+  }
+
   async addProduct(payload: AddProductValidatorProps) {
     await payload.showcaseImage.move(app.makePath('storage/uploads'), {
       name: `${cuid()}.${payload.showcaseImage.extname}`

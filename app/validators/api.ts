@@ -16,3 +16,12 @@ export const addProductValidator = vine.compile(
     color: vine.enum(EColorTags)
   })
 )
+
+export const addProductReviewValidator = vine.compile(
+  vine.object({
+    name: vine.string(),
+    productId: vine.number(),
+    content: vine.string(),
+    rating: vine.number()
+  })
+)
