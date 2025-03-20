@@ -40,7 +40,6 @@ export class ApiService {
       name: payload.name,
       price: payload.price,
       description: payload.description,
-      rating: undefined,
       showcaseImage: payload.showcaseImage.fileName,
       catalogImages: payload.catalogImages.map(image => image.fileName!),
       brand: payload.brand,
