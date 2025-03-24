@@ -15,6 +15,8 @@ const AuthController = () => import('#controllers/auth_controller')
 const BasketController = () => import('#controllers/basket_controller')
 
 router.group(() => {
+  router.get('test', () => 'Hello world!')
+
   router.get('products/:id', [ApiController, 'getProduct'])
   router.get('products/:id/reviews', [ApiController, 'getProductReviews'])
   router.post('products/:id/reviews', [ApiController, 'addProductReview']).use(middleware.auth())
