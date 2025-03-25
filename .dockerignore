@@ -1,0 +1,27 @@
+.git
+
+# node
+node_modules
+
+# secrets
+.env
+.env.local
+.env.production.local
+.env.development.local
+
+# editor
+.fleet
+.idea
+.vscode/**/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# os
+.DS_Store
+
+# adonisjs
+build
+public/assets
+tmp

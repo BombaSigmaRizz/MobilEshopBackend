@@ -32,6 +32,7 @@ export interface IProduct {
   id: number;
   name: string;
   price: number;
+  discountPrice: number;
   description: string;
   images: string[];
   brand: EBrandTags;

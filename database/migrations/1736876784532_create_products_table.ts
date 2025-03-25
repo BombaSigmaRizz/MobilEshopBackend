@@ -10,6 +10,8 @@ export default class extends BaseSchema {
       table.string('name').notNullable()
       
       table.integer('price').notNullable()
+
+      table.integer('discount_price').notNullable()
       
       table.string('description').notNullable()
       

@@ -8,6 +8,7 @@ export const addProductValidator = vine.compile(
   vine.object({
     name: vine.string(),
     price: vine.number(),
+    discountPrice: vine.number(),
     description: vine.string(),
     showcaseImage: vine.file(),
     catalogImages: vine.array(vine.file()),

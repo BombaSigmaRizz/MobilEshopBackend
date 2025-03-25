@@ -39,6 +39,7 @@ export class ApiService {
     return Product.create({
       name: payload.name,
       price: payload.price,
+      discountPrice: payload.discountPrice,
       description: payload.description,
       showcaseImage: payload.showcaseImage.fileName,
       catalogImages: payload.catalogImages.map(image => image.fileName!),
