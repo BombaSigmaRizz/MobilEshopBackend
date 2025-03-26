@@ -20,7 +20,6 @@ router.group(() => {
   router.get('products/:id', [ApiController, 'getProduct'])
   router.get('products/:id/reviews', [ApiController, 'getProductReviews'])
   router.post('products/:id/reviews', [ApiController, 'addProductReview']).use(middleware.auth())
-  router.get('check', [ApiController, 'isUp'])
   router.post('products', [ApiController, 'addProduct']).use(middleware.auth())
   router.get('products', [ApiController, 'getProducts'])
   router.get('uploads/*', [ApiController, 'getUpload'])

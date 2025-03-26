@@ -48,8 +48,4 @@ export class ApiService {
       color: payload.color
     })
   }
-
-  async isUp() {
-    return true
-  }
 }

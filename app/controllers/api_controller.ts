@@ -40,8 +40,4 @@ export default class ApiController {
     const absolutePath = app.makePath('storage/uploads', normalizedPath)
     return response.download(absolutePath)
   }
-
-  async isUp() {
-    return true
-  }
 }
