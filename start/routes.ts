@@ -25,7 +25,7 @@ router.group(() => {
   router.get('uploads/*', [ApiController, 'getUpload'])
 
   router.get('basket', [BasketController, 'getBasket'])
-  router.post('basket', [BasketController, 'addItemToBasket'])
+  router.post('basket', [BasketController, 'addItemToBasket']).use(middleware.auth())
   router.post('basket/:id', [BasketController, 'removeItemFromBasket'])
 })
 
